@@ -4,63 +4,6 @@
     box-sizing: border-box;
 }
 
-html{
-    font-size: 16px;
-}
-
-header{
-    display: grid;
-    grid-template:80px/5% 20% 1fr 25%;
-    background-color: blue;
-    width: 100vw;
-}
-#nome, #menu, #redes_sociais{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#logo{
-    background-color: aqua;
-    text-align: center;
-    height: 80%;
-    align-self: center;
-    justify-self: center;
-}
-
-#nome {
-    background-color: brown;
-    justify-content: start;
-
-}
-
-#menu {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-#redes_sociais{
-    background-color: chartreuse;
-}
-
-#menu > ul, #redes_sociais > ul{
-    list-style-type:none;
-    display: flex;
-}
-
-#menu > ul > li {
-    margin: 0 40px;
-}
-
-#menu > ul > li > a {
-    text-decoration: none;
-    font-size: 1.4rem;
-    color: darkorchid;
-    position: relative;
-}
-
 @keyframes zero_a_oitenta {
     0%{
         transform: scale(0.1, 1);
@@ -85,6 +28,69 @@ header{
     }
 }
 
+html{
+    font-size: 16px;
+}
+
+header{
+    display: grid;
+    grid-template:80px/5% 20% 1fr 25%;
+    background-color: black;
+    width: 100vw;
+}
+#nome, #menu, #redes_sociais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo{
+    background-color: black;
+    text-align: center;
+    height: 80%;
+    align-self: center;
+    justify-self: center;
+}
+
+#nome {
+    background-color: black;
+    justify-content: start;
+    color: darkorchid;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Shantell Sans', cursive;
+}
+
+#menu {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#redes_sociais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu > ul, #redes_sociais > ul{
+    list-style-type:none;
+    display: flex;
+}
+
+#menu > ul > li {
+    margin: 0 40px;
+}
+
+#menu > ul > li > a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: darkorchid;
+    position: relative;
+}
+
+
+
 #menu > ul > li > a:hover::after{
     content: "";
     background-color: darkorchid;
@@ -94,7 +100,6 @@ header{
     width: 100%;
     animation: zero_a_oitenta;
     animation-duration: 1s;
-    animation-fill-mode: forwards;
     top: 100%;
     transform-origin:left ;
     
@@ -109,8 +114,38 @@ header{
     width: 100%;
     animation: oitenta_a_zero;
     animation-duration: 1s;
-    animation-fill-mode: forwards;
     bottom: 100%;
     transform-origin: right;
     
 }
+.rs-1, .rs-2, .rs-3{
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    filter: brightness(0) invert(1) sepia(1) saturate(10) hue-rotate(180deg);
+    transition: transform;
+    transition-duration: 1s;
+}
+
+
+.rs-1:hover{
+    transform:translateY(-10px);
+    filter: blur(1px) brightness(200%) contrast(200%) drop-shadow(3px 3px 1px #ff0000) grayscale(0%) hue-rotate(0deg) invert(100%) opacity(100%) saturate(100%) sepia(0%) ;
+}
+
+.rs-2:hover{
+    transform:translateY(-10px);
+}
+
+.rs-3:hover{
+    transform:translateY(-10px);
+}
+
+
+i{
+    color:red;
+}
+
