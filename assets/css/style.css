@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+header{
+    display: grid;
+    grid-template:80px/5% 20% 1fr 25%;
+    background-color: blue;
+    width: 100vw;
+}
+#nome, #menu, #redes_sociais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo{
+    background-color: aqua;
+    text-align: center;
+    height: 80%;
+    align-self: center;
+    justify-self: center;
+}
+
+#nome {
+    background-color: brown;
+    justify-content: start;
+
+}
+
+#menu {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#redes_sociais{
+    background-color: chartreuse;
+}
+
+#menu > ul, #redes_sociais > ul{
+    list-style-type:none;
+    display: flex;
+}
+
+#menu > ul > li {
+    margin: 0 40px;
+}
+
+#menu > ul > li > a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: darkorchid;
+    position: relative;
+}
+
+@keyframes zero_a_oitenta {
+    0%{
+        transform: scale(0.1, 1);
+    }
+
+    100%{
+       transform: scale(1, 1);
+    }
+
+    0%{
+        transform: scale(0.1, 1);
+    }
+}
+
+@keyframes oitenta_a_zero {
+    0%{
+        transform: scale(0.1, 1);
+    }
+
+    100%{
+        transform: scale(1, 1);
+    }
+}
+
+#menu > ul > li > a:hover::after{
+    content: "";
+    background-color: darkorchid;
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    animation: zero_a_oitenta;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    top: 100%;
+    transform-origin:left ;
+    
+}
+
+#menu > ul > li > a:hover::before{
+    content: "";
+    background-color: darkorchid;
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    animation: oitenta_a_zero;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    bottom: 100%;
+    transform-origin: right;
+    
+}
