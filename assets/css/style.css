@@ -7,6 +7,10 @@ html{
     font-size: 16px;
 }
 
+body{
+    background-color: black;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -14,6 +18,7 @@ header{
     height: 100px;
     margin: auto;
     background-color: black;
+    border-bottom: 1px solid white;
 }
 
 .nome-logo{
@@ -31,7 +36,7 @@ header{
 } */
 
 #nome {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: darkorchid;
     font-family: 'Lato', sans-serif;
     font-family: 'Shantell Sans', cursive;
@@ -71,24 +76,20 @@ header{
     color: darkorchid;
     position: relative;
     width: 100%;
-    height: 100%;
-    transform: translateX(-100%);
-    transition-duration: 1s;
+    height: 100%;;
 }
 
 
 
 #menu > ul > li > a::after{
     content: "";
-    background-color: darkorchid;
+    background-color: white;
     display: block;
     position: absolute;
     height: 6px;
     width: 0;
     top: 100%;
-    transition-property: width ;
-    transition-duration: 1s;
-    transition-timing-function: ease;
+    transition: width 1s ease;
 }
 
 #menu > ul > li > a:hover::after{
@@ -97,15 +98,15 @@ header{
 
 
 #redes_sociais{
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     width: 20%;
 }
 
 #redes_sociais > ul{
-    width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    align-items: center;
 }
 
 #redes_sociais > ul > li{
@@ -114,17 +115,14 @@ header{
 .rs-1, .rs-2, .rs-3{
     font-size: 30px;
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     margin: 0 10px;
     text-align: center;
-    line-height: 50px;
-    transition-property: transform, color;
-    transition-duration: 1s;
-    transition-timing-function: ease;
+
+    transition:transform 0.9s ease , color 0.5s ease;
+
 }
-
-
 .rs-1:hover{
     transform:translateY(-10px);
     color:#E1306C;
@@ -140,3 +138,68 @@ header{
     color:#0e76a8;
 }
 
+section{
+    max-width: 1200px;
+    display: flex;
+    margin: auto;
+    border-bottom: 2px solid white;
+    height: 100vh;
+}
+
+.perfil, .sobre{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre{
+    flex-direction: column;
+}
+
+#sobre_foto{
+    width: 80%;
+    border-radius: 20%;
+}
+
+.sobre > p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 30px;
+    color: white;
+    text-align: justify;
+}
+
+.tecnologias_projetos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.titulo{
+    font-size: 3rem;
+}
+
+.titulo > h1 {
+    color: darkorchid;
+}
+
+.cards{
+    border-radius: 10px;
+    background-color: rgba(128,128,128, 0.7);
+    height: 500px;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: auto;
+}
+
+.card{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    
+}
