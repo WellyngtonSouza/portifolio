@@ -31,6 +31,7 @@ header{
     left: 0;
     margin: auto;
     align-items: center;
+    z-index:5;
 
 }
 
@@ -38,6 +39,8 @@ header{
     display: flex;
     width: 20%;
     justify-content: start;
+    z-index: 2;
+    position: relative;
 }
 #nome, #menu, #redes_sociais{
     display: flex;
@@ -72,6 +75,7 @@ header{
     display: none;
     border: none;
     cursor: pointer;
+    z-index: 2;
     
 }
 
@@ -86,13 +90,15 @@ header{
     position: fixed;
     height: 100vh;
     width: 100vw;
-    top:100px;
+    top:0;
     display: flex;
     justify-content: center;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1;
 }
 
 #menu-mobile > ul{
-    background-color: rgba(0,0,0,0.9);
+
     width: 100%;
     height: 100%;
     margin: auto;
