@@ -24,12 +24,14 @@
 
         <nav id="menu">
             <ul>
-                <li><a class="item_1" href="">Sobre mim</a></li>
-                <li><a class="item_2" href="">Conhecimentos</a></li>
-                <li><a class="item_3" href="">Projetos</a></li>
-                <li><a class="item_4" href="">Contato</a></li>
+                <li><a class="item_1" href="#section_localizacao_sobre">Sobre mim</a></li>
+                <li><a class="item_2" href="#section_localizacao_conhecimento">Conhecimentos</a></li>
+                <li><a class="item_3" href="#section_localizacao_projeto">Projetos</a></li>
+                <!-- <li><a class="item_4" href="#section_localizacao_contato">Contato</a></li> -->
             </ul>
         </nav>
+
+        
 
         <nav id="redes_sociais">
             <ul>
@@ -38,9 +40,28 @@
                 <li><a href=""><i class="rs-3 fa-brands fa-linkedin"></i></a></li>
             </ul>
         </nav>
+
+        <button id="menu-icon"><i id="icon" class="fa-solid fa-bars"></i></button>
+        <nav id="menu-mobile">
+            <ul>
+                <li><a class="item_1 clickin" href="#section_localizacao_sobre">Sobre mim</a></li>
+                <li><a class="item_2 clickin" href="#section_localizacao_conhecimento">Conhecimentos</a></li>
+                <li><a class="item_3 clickin" href="#section_localizacao_projeto">Projetos</a></li>
+                <!-- <li><a class="item_4" href="#section_localizacao_contato">Contato</a></li> -->
+            </ul>
+        </nav>
+       
+
     </header>
 
-    <section>
+
+    
+
+    <section id="section_localizacao_sobre">
+
+        
+
+
         <article class="perfil">
             <img id="sobre_foto" src="./assets/image/perfil.jpeg" alt="">
         </article>
@@ -69,17 +90,11 @@
                 profissional, buscando novas oportunidades para crescer e contribuir com soluções criativas e
                 eficientes.
             </p>
-            <br>
-            <p>
-                Acredito que é importante equilibrar o tempo de estudos com momentos de lazer, por isso, quando não
-                estou
-                estudando, gosto de passar um tempo com meus amigos jogando games ou conversando em chats do Discord.
-            </p>
         </article>
 
     </section>
 
-    <section class="tecnologias_projetos">
+    <section class="tecnologias_projetos" id="section_localizacao_conhecimento">
         <article class="titulo">
             <h1>Tecnologias que tenho conhecimento</h1>
         </article>
@@ -103,7 +118,7 @@
         </article>
     </section>
 
-    <section class="tecnologias_projetos">
+    <section class="tecnologias_projetos" id="section_localizacao_projeto">
         <article class="titulo">
             <h1> Projetos </h1>
         </article>
@@ -113,7 +128,6 @@
             <img class="card_project" src="" alt="">
         </article>
     </section>
-
 
 </body>
 <script>
@@ -140,20 +154,58 @@
             document.getElementsByTagName("header")[0].style.backgroundColor = "rgba(0,0,0, 0.9)"
             document.documentElement.style.setProperty('--widht-max-2', '0%');
             document.documentElement.style.setProperty('--widht-max-3', '0%');
-            document.documentElement.style.setProperty('--widht-max-4', '0%');
         }
 
-        if (scrollY > 650 && scrollY <= 1450) {
+        if (scrollY > 650 && scrollY < 1535) {
             document.documentElement.style.setProperty('--widht-max-2', '100%');
             document.documentElement.style.setProperty('--widht-max-3', '0%');
-            document.documentElement.style.setProperty('--widht-max-4', '0%');
+  
 
         }
-        else if (scrollY > 1450) {
+        else if (scrollY >= 1535 && scrollY < 2736) {
             document.documentElement.style.setProperty('--widht-max-2', '0%');
             document.documentElement.style.setProperty('--widht-max-3', '100%');
+            document.documentElement.style.setProperty('--widht-max-4', '0%');
+        }
+        else if(scrollY >= 2736){
+            document.documentElement.style.setProperty('--widht-max-2', '0%');
+            document.documentElement.style.setProperty('--widht-max-3', '0%');
         }
     })
+
+    let clicked = false
+
+    let menuIcon = document.querySelector("#menu-icon")
+    let icon = document.querySelector("#icon")
+    let menuMobile = document.querySelector("#menu-mobile")
+    menuMobile.style.display = "none"
+
+    
+
+    menuIcon.addEventListener("click", ()=>{
+        clicked = !clicked
+        if(!clicked){
+            icon.setAttribute("class", "fa-solid fa-bars")
+            menuMobile.style.display = "none"
+            
+
+        }else{
+            icon.setAttribute("class", "fa-solid fa-xmark")
+            menuMobile.style.display = "block"
+        }
+
+    })
+
+    document.querySelectorAll(".clickin").forEach(element => {
+        element.addEventListener("click", ()=>{
+            menuMobile.style.display = "none"
+            icon.setAttribute("class", "fa-solid fa-bars")
+            clicked = false
+        })
+    });
+    
+
+    //<i class="fa-solid fa-xmark-large"></i> <i class="fa-solid fa-xmark"></i>
 </script>
 
 </html>
