@@ -359,10 +359,10 @@ section{
     
 
     .cards{
-        width: 80%;
+        width: 90%;
     }
     .sobre, .perfil{
-        width: 80%;
+        width: 90%;
     }
 
     .perfil {
@@ -389,4 +389,10 @@ section{
         display: block;
     }
 
+}
+
+@media screen and (max-width: 400px){
+    .titulo{
+        margin: 50px 0 0 0 ;
+    }
 }
