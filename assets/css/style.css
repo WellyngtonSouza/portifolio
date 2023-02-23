@@ -350,15 +350,27 @@ section{
         text-align: center;
     }
 
-    section{
-        width: 100%;
+    header{
+        justify-content: space-around;
+        z-index: 1;
     }
+
+
+    
 
     .cards{
         width: 80%;
     }
     .sobre, .perfil{
         width: 80%;
+    }
+
+    .perfil {
+        margin-top: 140px;
+    }
+
+    .titulo{
+        margin: 20px 0 0 0 ;
     }
     #menu, #redes_sociais{
         display: none;
@@ -369,14 +381,10 @@ section{
         width: 100%;
         align-items: center;
         height: 100%;
-        margin-top: 150px;
-        
+
     }
 
-    header{
-        justify-content: space-around;
-        top: 0;
-    }
+    
     #menu-icon {
         display: block;
     }
