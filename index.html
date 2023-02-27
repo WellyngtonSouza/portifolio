@@ -36,8 +36,6 @@
             </ul>
         </nav>
 
-
-
         <nav id="redes_sociais">
             <ul>
                 <li><a href=""><i class="rs-1 fa-brands fa-instagram"></i></a></li>
@@ -45,7 +43,7 @@
                 <li><a href=""><i class="rs-3 fa-brands fa-linkedin"></i></a></li>
             </ul>
         </nav>
-
+        <img class="logo_menu" src="./assets/image/log.png" alt="">
         <button id="menu-icon"><i id="icon" class="fa-solid fa-bars"></i></button>
         <nav id="menu-mobile">
             <ul>
@@ -55,18 +53,9 @@
                 <!-- <li><a class="item_4" href="#section_localizacao_contato">Contato</a></li> -->
             </ul>
         </nav>
-
-
     </header>
 
-
-
-
-    <section class="secoes" id="section_localizacao_sobre">
-
-
-
-
+    <section class="sobre_mim_section" id="section_localizacao_sobre">
         <article class="perfil">
             <img id="sobre_foto" src="./assets/image/perfil.jpeg" alt="">
         </article>
@@ -83,13 +72,13 @@
                 JavaScript,
                 HTML e CSS.
             </p>
-            
+
             <button>Download CV</button>
         </article>
 
     </section>
 
-    <section class="tecnologias_projetos secoes" id="section_localizacao_conhecimento">
+    <section class="projeto_section" id="section_localizacao_conhecimento">
         <article class="titulo">
             <h1>Tecnologias que tenho conhecimento</h1>
         </article>
@@ -98,43 +87,30 @@
             <button class="button_left"><img src="./assets/image/esquerda-direita.png" alt=""></button>
 
             <article class="container_images">
-                <div class="images_conhecimentos">
-                    <ul>
-                        <img class="card" src="./assets/image/html.png" alt="">
-                        <img class="card" src="./assets/image/css.png" alt="">
-                        <img class="card" src="./assets/image/javascript.png" alt="">
-                    </ul>
-
-                </div>
-
+                <ul>
+                    <img class="card" src="./assets/image/html.png" alt="">
+                    <img class="card" src="./assets/image/css.png" alt="">
+                    <img class="card" src="./assets/image/javascript.png" alt="">
+                </ul>
             </article>
 
             <button class="button_right"><img src="./assets/image/esquerda-direita.png" alt=""></button>
         </article>
     </section>
 
-    <section class="tecnologias_projetos secoes" id="section_localizacao_projeto">
+    <!-- <section class="tecnologias_projetos secoes" id="section_localizacao_projeto">
         <article class="titulo">
             <h1> Projetos </h1>
         </article>
-
-        <article class="cards">
-            <img class="card_project" src="" alt="">
-            <img class="card_project" src="" alt="">
-        </article>
-    </section>
+    </section> -->
 
 </body>
 <script>
-    let cards = document.querySelector(".images_conhecimentos")
+    let cards = document.querySelector(".container_images > ul")
 
     let button_left = document.querySelector(".button_left")
     let button_right = document.querySelector(".button_right")
 
-    if (cards.scrollWidth > 660) {
-        button_left.style.display = "flex"
-        button_right.style.display = "flex"
-    }
 
     button_left.addEventListener("click", () => {
         cards.scrollLeft -= 100;
@@ -143,28 +119,47 @@
     button_right.addEventListener("click", () => {
         cards.scrollLeft += 100;
     })
+    document.documentElement.style.setProperty('--widht-max-1', '100%');
+
+
+    let body = document.querySelector("body")
 
     addEventListener("scroll", () => {
-        if (scrollY > 90) {
-            document.getElementsByTagName("header")[0].style.backgroundColor = "rgba(27,27,27, 0.9)"
+
+
+        // if (scrollY > 90) {
+        //     document.getElementsByTagName("header")[0].style.backgroundColor = "rgba(27,27,27, 0.9)"
+        //     document.documentElement.style.setProperty('--widht-max-2', '0%');
+        //     document.documentElement.style.setProperty('--widht-max-3', '0%');
+        // }
+        if(scrollY >= 0 && scrollY < 400){
+            document.documentElement.style.setProperty('--widht-max-1', '100%');
             document.documentElement.style.setProperty('--widht-max-2', '0%');
             document.documentElement.style.setProperty('--widht-max-3', '0%');
         }
-
-        if (scrollY > 650 && scrollY < 1535) {
+        if (scrollY > 400 && scrollY < 1535) {
+            document.documentElement.style.setProperty('--widht-max-1', '0%');
             document.documentElement.style.setProperty('--widht-max-2', '100%');
             document.documentElement.style.setProperty('--widht-max-3', '0%');
-
-
         }
-        else if (scrollY >= 1535 && scrollY < 2736) {
-            document.documentElement.style.setProperty('--widht-max-2', '0%');
-            document.documentElement.style.setProperty('--widht-max-3', '100%');
-            document.documentElement.style.setProperty('--widht-max-4', '0%');
-        }
-        else if (scrollY >= 2736) {
-            document.documentElement.style.setProperty('--widht-max-2', '0%');
-            document.documentElement.style.setProperty('--widht-max-3', '0%');
+        // else if (scrollY >= 1535 && scrollY < 2736) {
+        //     document.documentElement.style.setProperty('--widht-max-2', '0%');
+        //     document.documentElement.style.setProperty('--widht-max-3', '100%');
+        //     document.documentElement.style.setProperty('--widht-max-4', '0%');
+        // }
+        // else if (scrollY >= 2736) {
+        //     document.documentElement.style.setProperty('--widht-max-2', '0%');
+        //     document.documentElement.style.setProperty('--widht-max-3', '0%');
+        // }
+
+        
+
+        if (cards.scrollWidth < 950) {
+            button_left.style.display = "flex"
+            button_right.style.display = "flex"
+        }else{
+            button_left.style.display = "none"
+            button_right.style.display = "none" 
         }
     })
 
