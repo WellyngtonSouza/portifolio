@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,16 +12,21 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Shantell+Sans:wght@300&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lato:wght@300;400;700;900&family=Shantell+Sans:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Raleway:wght@800&family=Shantell+Sans:wght@300&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/af14f3aaa9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header id="cabecalho">
-        <article class="nome-logo">
-            <h1 id="nome">Wellyngton Souza</h1>
-        </article>
-
-
         <nav id="menu">
             <ul>
                 <li><a class="item_1" href="#section_localizacao_sobre">Sobre mim</a></li>
@@ -31,7 +36,7 @@
             </ul>
         </nav>
 
-        
+
 
         <nav id="redes_sociais">
             <ul>
@@ -50,16 +55,16 @@
                 <!-- <li><a class="item_4" href="#section_localizacao_contato">Contato</a></li> -->
             </ul>
         </nav>
-       
+
 
     </header>
 
 
-    
+
 
     <section class="secoes" id="section_localizacao_sobre">
 
-        
+
 
 
         <article class="perfil">
@@ -67,6 +72,8 @@
         </article>
 
         <article class="sobre">
+            <h1>Wellyngton Souza</h1>
+
             <p>
                 Olá, meu nome é Wellyngton Souza, tenho 21 anos e sou um jovem apaixonado pela tecnologia e comprometido
                 em
@@ -76,20 +83,8 @@
                 JavaScript,
                 HTML e CSS.
             </p>
-            <br>
-            <p>
-
-                Estou sempre buscando desenvolver minhas habilidades e conhecimentos na área de tecnologia, e aplico o
-                que
-                aprendo em projetos pessoais, que me permitem colocar em prática as habilidades que adquiro.
-            </p>
-            <br>
-            <p>
-
-                Sinto-me motivado em aprender novas tecnologias, superar desafios e estar sempre evoluindo como
-                profissional, buscando novas oportunidades para crescer e contribuir com soluções criativas e
-                eficientes.
-            </p>
+            
+            <button>Download CV</button>
         </article>
 
     </section>
@@ -136,7 +131,7 @@
     let button_left = document.querySelector(".button_left")
     let button_right = document.querySelector(".button_right")
 
-    if(cards.scrollWidth > 660){
+    if (cards.scrollWidth > 660) {
         button_left.style.display = "flex"
         button_right.style.display = "flex"
     }
@@ -151,7 +146,7 @@
 
     addEventListener("scroll", () => {
         if (scrollY > 90) {
-            document.getElementsByTagName("header")[0].style.backgroundColor = "rgba(0,0,0, 0.9)"
+            document.getElementsByTagName("header")[0].style.backgroundColor = "rgba(27,27,27, 0.9)"
             document.documentElement.style.setProperty('--widht-max-2', '0%');
             document.documentElement.style.setProperty('--widht-max-3', '0%');
         }
@@ -159,7 +154,7 @@
         if (scrollY > 650 && scrollY < 1535) {
             document.documentElement.style.setProperty('--widht-max-2', '100%');
             document.documentElement.style.setProperty('--widht-max-3', '0%');
-  
+
 
         }
         else if (scrollY >= 1535 && scrollY < 2736) {
@@ -167,7 +162,7 @@
             document.documentElement.style.setProperty('--widht-max-3', '100%');
             document.documentElement.style.setProperty('--widht-max-4', '0%');
         }
-        else if(scrollY >= 2736){
+        else if (scrollY >= 2736) {
             document.documentElement.style.setProperty('--widht-max-2', '0%');
             document.documentElement.style.setProperty('--widht-max-3', '0%');
         }
@@ -180,16 +175,16 @@
     let menuMobile = document.querySelector("#menu-mobile")
     menuMobile.style.display = "none"
 
-    
 
-    menuIcon.addEventListener("click", ()=>{
+
+    menuIcon.addEventListener("click", () => {
         clicked = !clicked
-        if(!clicked){
+        if (!clicked) {
             icon.setAttribute("class", "fa-solid fa-bars")
             menuMobile.style.display = "none"
-            
 
-        }else{
+
+        } else {
             icon.setAttribute("class", "fa-solid fa-xmark")
             menuMobile.style.display = "block"
         }
@@ -197,13 +192,13 @@
     })
 
     document.querySelectorAll(".clickin").forEach(element => {
-        element.addEventListener("click", ()=>{
+        element.addEventListener("click", () => {
             menuMobile.style.display = "none"
             icon.setAttribute("class", "fa-solid fa-bars")
             clicked = false
         })
     });
-    
+
 
     //<i class="fa-solid fa-xmark-large"></i> <i class="fa-solid fa-xmark"></i>
 </script>

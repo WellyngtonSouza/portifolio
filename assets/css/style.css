@@ -8,10 +8,13 @@
  --widht-max-1 : 0; 
  --widht-max-2 : 0; 
  --widht-max-3 : 0; 
- --widht-max-4 : 0; 
+ --widht-max-4 : 0;
+ 
+ font-size: 62.5%;
+ 
 }
 html{
-    font-size: 16px;
+    font-size: 1.6rem ;
     scroll-behavior:smooth;
 }
 
@@ -21,74 +24,52 @@ body{
 
 #cabecalho{
     display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    height: 100px;
-    background-color: black;
-    border-bottom: 1px solid white;
+    justify-content: space-around;
+    max-width: 1110px;
+    height: 7rem;
+    border-radius: 0px 0px 8px 8px;
+    background-color: #1B1B1B;
     position:fixed;
     right: 0;
     left: 0;
     margin: auto;
-    align-items: center;
     z-index:5;
 }
 
-.nome-logo{
-    display: flex;
-    width: 20%;
-    justify-content: start;
-    z-index: 2;
-    position: relative;
-}
-
-#nome {
-    font-size: 1.6rem;
-    color: darkorchid;
-    font-family: 'Lato', sans-serif;
-    font-family: 'Shantell Sans', cursive;
-    margin:0 0 0 10px;  
-}
 
 #menu, #redes_sociais{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-/* #logo{
-    height: 80%;
-} */
-
-
 
 #menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: fit-content;
 
-}
-#menu > ul, #redes_sociais > ul{
-    list-style-type:none;
-    width: 100%;
-    display: flex;
 }
 
 #menu > ul {
     text-align: center;
     display: flex;
     justify-content: space-evenly;
-   
+    list-style-type:none;
+    gap: 7rem;
+    margin-bottom: 0.4rem;
 }
 
 
 #menu > ul > li > a {
     text-decoration: none;
-    font-size: 1.3rem;
-    color: darkorchid;
+    font-family: 'IBM Plex Mono';
+    font-size: 1.8rem;
     position: relative;
-    width: 100%;
-    height: 100%;;
+    letter-spacing: 0.01em;
+    color: darkorchid;
+    width: 34px;
+    height: 18px;
 }
 
 
@@ -127,15 +108,15 @@ body{
 
 
 #redes_sociais{
-    justify-content: center;
     align-items: center;
-    width: 20%;
 }
 
 #redes_sociais > ul{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0.4rem;
+    list-style-type:none;
 }
 
 .rs-1, .rs-2, .rs-3{
@@ -233,6 +214,8 @@ body{
     display: flex;
     margin: auto;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .perfil, .sobre{
@@ -243,21 +226,59 @@ body{
 }
 
 #sobre_foto{
-    width: 80%;
+    width: 35rem;
     border-radius: 20%;
 }
 
 .sobre{
+    display: flex;
     flex-direction: column;
-    padding: 20px;
+    gap:30px;
+    width: fit-content;
+    height: fit-content;
+    align-items: end;
+}
+
+.sobre > h1{
+    max-width: 42.6rem;
+    height: 5.2rem;
+    font-family: 'Raleway';
+    font-size: 4.4rem;
+    line-height: 52px;
+    text-align: end;
+/* identical to box height */
+
+    color: #FFFFFF;
+
+}
+
+.sobre > button{
+    padding: 21px 64px;
+    gap: 10px;
+    width: 30.789rem;
+    height: 6.3rem;
+    font-size: 1.6rem;
+    background: #3F8E00;
+    border: 1px solid #62BA1B;
+    box-shadow: 0px 8px 30px rgba(63, 142, 0, 0.5);
+    border-radius: 4px;
+    color:#FFFFFF ;
+    font-family: 'IBM Plex Mono';
+    line-height: 21px;
 }
 
 .sobre > p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    line-height: 30px;
-    color: white;
+    max-width: 49.2rem;
+    height: 15.2rem;
     text-align: justify;
+    font-family: 'IBM Plex Mono';
+    font-size: 1.4rem;
+    line-height: 24px;
+    /* or 171% */
+
+    letter-spacing: 0.01em;
+
+    color: #9C9C9C;
 }
 
 .tecnologias_projetos {
@@ -365,6 +386,12 @@ body{
         width: 90%;
     }
 
+    .sobre{
+        align-items: center;
+        gap: 70px;
+    }
+
+
     .perfil {
         margin-top: 140px;
     }
@@ -384,8 +411,20 @@ body{
 
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 450px){
     .titulo{
         margin: 100px 0 0 0 ;
+    }
+
+    .sobre {
+        gap: 90px;
+    }
+
+    .sobre > h1 {
+        font-size: 3.3rem;
+        height: 1rem; gap: 30px;
+    }
+    .sobre > p {
+        height: 20.4rem;
     }
 }
